@@ -1,0 +1,227 @@
+// MIXINS and MODULS
+@import '_mixins/smart-grid'
+@import 'fonts'
+@import 'media'
+@import 'vars'
+
++reset()
+
+a
+    text-decoration: none
+
+    &:link
+        color: #fff
+
+    &:visited
+        color: #fff
+
+*
+    box-sizing: border-box
+
+main
+    display: flex
+    flex: 1
+    align-items: center
+    justify-content: center
+
+body
+    display: flex
+    min-height: 100vh
+    flex-flow: column wrap
+    font-family: "Open Sans", sans-serif
+    justify-content: center
+
+//HEADER
+
+.page_header
+    width: 100%
+    display: flex
+    flex-flow: row wrap
+
+    .header_top
+        display: flex
+        font-size: 16px
+        width: 100%
+        margin-bottom: 40px
+        justify-content: space-around
+        padding:
+            left: 12px
+        background-color: #000
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4)
+        border-bottom: 5px solid var(--colorMain)
+
+        .hamburger
+            background-color: #000
+            border: none
+            align-self: center
+            min-width: 16px
+            order: 1
+            padding: 10px
+
+        .main_nav
+            order: 0
+
+            li:nth-of-type(6)
+                margin-right: 2em
+
+            &__link
+                padding: 12px 20px
+
+            &__link:last-child
+                margin-right: 0
+
+            .link-blue:hover,
+            li:nth-of-type(1)[title="active"]
+                background-color: var(--colorFeature)
+
+            .link-orange:hover,
+            li:nth-of-type(2)[title="active"]
+                background-color: var(--colorPosib)
+
+            .link-yellow:hover,
+            li:nth-of-type(3)[title="active"]
+                background-color: var(--colorDoc)
+
+            .link-purple:hover,
+            li:nth-of-type(4)[title="active"]
+                background-color: var(--colorFeed)
+
+            .link-green:hover,
+            li:nth-of-type(5)[title="active"]
+                background-color: var(--colorAbout)
+
+            .link-brown:hover,
+            li:nth-of-type(6)[title="active"]
+                background-color: var(--colorSystem)
+
+            .link-red:hover,
+            li:nth-of-type(7)[title="active"]
+                background-color: var(--colorLogIn)
+
+    .promo
+        height: 480px
+        width: 100%
+        margin-bottom: 40px
+
+        &__darkness
+            display: flex
+            justify-content: center
+            height: 100%
+            background-color: rgba(86, 185, 208, 0.8)
+
+        &__slogan
+            display: flex
+            flex-flow: column wrap
+            align-items: center
+            justify-content: center
+            color: #fff
+            font-size: 36px
+
+            img
+                min-height: 55px
+                max-width: 300px
+                min-width: 300px
+
+            p
+                color: rgba(255, 255, 255, 0.8)
+                text-align: center
+                max-width: 500px
+
+
+//MAIN
+
+.features
+    display: flex
+    flex-flow: column wrap
+
+    h1
+        text-align: center
+        font-size: 40px
+        color: var(--colorMain)
+        margin-bottom: 64px
+
+    ul
+        display: flex
+        max-width: 1140px
+        flex-flow: row wrap
+        justify-content: center
+
+        .feature__item
+            display: flex
+            max-width: 350px
+            margin-bottom: 64px
+            margin:
+                left: 15px
+                right: 15px
+            flex-flow: row wrap
+            justify-content: center
+
+            h2
+                color: var(--colorMain)
+                font-size: 32px
+                margin-bottom: 20px
+                text-align: center
+
+            p
+                color: var(--colorText)
+                font-size: 24px
+                text-align: center
+
+            img
+                max-width: 120px
+                align-self: center
+
+        .feature__item:last-child
+            margin-bottom: 100px
+
+
+//FOOTER
+
+.page_footer
+    display: flex
+    flex-flow: row wrap
+    font-size: 16px
+    width: 100%
+    justify-content: space-around
+    padding:
+        left: 24px
+        top: 24px
+    background-color: #000
+    border-top: 5px solid var(--colorMain)
+
+    .footer_nav
+        justify-content: space-between
+
+        ul
+            display: inline-flex
+            flex-flow: row wrap
+            padding:
+                bottom: 24px
+                right: 24px
+
+            li
+                margin-right: 1em
+
+            li:last-child
+                margin-right: 0
+
+        ul:nth-of-type(1)
+            margin-right: 2em
+
+
+    .footer_copyright
+        color: #fff
+        padding:
+            bottom: 24px
+            right: 24px
+
+    .footer_nav
+
+        .link-purple:hover a
+            color: var(--colorFeed)
+
+        .link-red:hover a
+            color: var(--colorLogIn)
+
+        li
+            padding: 5px
