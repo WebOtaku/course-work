@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Cool Study</title>
         <meta charset="UTF-8">
+
+        <title>Cool Study</title>
+
+        <meta name="keyword" content="">
+        <meta name="description" content="">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
     </head>
     <body>
 
         <header class="page_header">
             <div class="header_top">
-                <button class="hamburger"><img src="img/hamburger.png"></button>
+                <button class="hamburger"><img src="img/arrow.png"></button>
                 <nav class="main_nav">
                     <ul>
                         <li class="main_nav__link link-blue" title="active"><a href="index.php"><img src="img/home.png" alt="Главная"></a></li>

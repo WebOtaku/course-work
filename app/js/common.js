@@ -14,9 +14,26 @@ $(document).ready(function(){
     });
 
     var $main_nav = $('.main_nav');
+    var $nav_btn = $('.hamburger');
+    var $deg, k;
 
-    $('.hamburger').click(function() {
+    $nav_btn.click(function() {
         $main_nav.slideToggle();
+
+        k++;
+        if (k === 1) {
+            $deg = 0;
+        } else {
+            $deg = 180;
+            k = 0;
+        }
+
+        $nav_btn.animate({deg: $deg}, {duration: 500, step: function (now) {
+           $('.hamburger img').css({
+               transform: 'rotate(' + now + 'deg)'
+           });
+        }
+        })();
     });
 
     $(window).resize(function () {

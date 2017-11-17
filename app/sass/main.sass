@@ -1,7 +1,6 @@
 // MIXINS and MODULS
 @import '_mixins/smart-grid'
 @import 'fonts'
-@import 'media'
 @import 'vars'
 
 +reset()
@@ -51,24 +50,34 @@ body
         border-bottom: 5px solid var(--colorMain)
 
         .hamburger
+            display: none
+            width: 100%
             background-color: #000
             border: none
             align-self: center
             min-width: 16px
             order: 1
             padding: 10px
+            transition: transform 0.1s ease-in-out
+
+            &:focus
+                outline: none
 
         .main_nav
             order: 0
+
+            ul
+                display: inline-flex
+                flex-flow: row wrap
 
             li:nth-of-type(6)
                 margin-right: 2em
 
             &__link
-                padding: 12px 20px
 
-            &__link:last-child
-                margin-right: 0
+                a
+                    display: block
+                    padding: 12px 20px
 
             .link-blue:hover,
             li:nth-of-type(1)[title="active"]
@@ -123,9 +132,39 @@ body
                 min-width: 300px
 
             p
+                margin-top: 20px
                 color: rgba(255, 255, 255, 0.8)
                 text-align: center
                 max-width: 500px
+
+
+.header_bottom
+    display: flex
+    width: 100%
+    justify-content: center
+    background-color: var(--colorMain)
+    padding:
+        top: 16px
+        left: 16px
+
+    &__logo
+        display: flex
+        flex-flow: row wrap
+        align-items: center
+        justify-content: flex-start
+        width: 100%
+        max-width: 1140px
+        padding-right: 16px
+
+        h1
+            color: #ffffff
+            font-size: 32pt
+            padding-bottom: 16px
+
+        img
+            margin-right: 0.8em
+            padding-bottom: 16px
+            min-width: 296px
 
 
 //MAIN
@@ -173,6 +212,20 @@ body
 
         .feature__item:last-child
             margin-bottom: 100px
+
+
+.work_in_progress
+    display: flex
+    flex-flow: row wrap
+    align-items: center
+    justify-content: center
+    margin-bottom: 100px
+
+    span
+        padding: 16px
+        font-size: 32pt
+        text-align: center
+        color: var(--colorMain)
 
 
 //FOOTER
@@ -225,3 +278,5 @@ body
 
         li
             padding: 5px
+
+@import 'media'

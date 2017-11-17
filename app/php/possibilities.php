@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Cool Study</title>
         <meta charset="UTF-8">
+
+        <title>Cool Study</title>
+
+        <meta name="keyword" content="">
+        <meta name="description" content="">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
     </head>
     <body>
 
         <header class="page_header">
             <div class="header_top">
+                <button class="hamburger"><img src="../img/arrow.png"></button>
                 <nav class="main_nav">
                     <ul>
                         <li class="main_nav__link link-blue"><a href="../index.php"><img src="../img/home.png" alt="Главная"></a></li>
@@ -21,34 +30,18 @@
                     </ul>
                 </nav>
             </div>
+            <div class="header_bottom">
+                <div class="header_bottom__logo">
+                    <img src="../img/logo.png" alt="Cool Study">
+                    <h1>Возможности</h1>
+                </div>
+            </div>
         </header>
 
         <main>
-            <div class="features">
-                <h1>Особенности системы</h1>
-                <ul>
-                    <li class="feature__item">
-                        <img src="../img/world.png" alt="Мир">
-                        <div class="feature__description">
-                            <h2>Доступность в любое время, в любом месте</h2>
-                            <p>Наш сервис позволяет доступ из любого современного устройства - Mac, PC, планшета или смартфона. Вы можете создать весь курс на планшете и завершить онлайн тест на вашем смартфоне.</p>
-                        </div>
-                    </li>
-                    <li class="feature__item feature__item-right">
-                        <img src="../img/simple.png" alt="Мир">
-                        <div class="feature__description">
-                            <h2>Простота использования</h2>
-                            <p>Интерфейс и учителя, и ученика прост, не требует никаких специаль-ных навыков.</p>
-                        </div>
-                    </li>
-                    <li class="feature__item">
-                        <img src="../img/funct.png" alt="Мир">
-                        <div class="feature__description">
-                            <h2>Функциональность</h2>
-                            <p>Вы можете создавать онлайн-курсы с любыми вложениями, онлайн мультимедиа, видео, форумами, домашними заданиями, тестами.</p>
-                        </div>
-                    </li>
-                </ul>
+            <div class="work_in_progress">
+                <img src="../img/funct.png" alt="Мир">
+                <span>Ведуться работы</span>
             </div>
         </main>
 
