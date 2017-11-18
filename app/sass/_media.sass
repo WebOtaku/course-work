@@ -1,14 +1,6 @@
-@media screen and (max-width: 610px)
-    .header_bottom
-
-        &__logo
-
-            img
-                margin-right: 0
-
-
-@media screen and (max-width: 768px)
+@media screen and (max-width: 416px)
     .page_header
+
         .header_top
             flex-direction: column
             align-items: center
@@ -30,12 +22,29 @@
                         margin-right: 0
 
 
+@media screen and (max-width: 610px)
+    .page_header
+
+        .header_bottom
+
+            &__logo
+
+                img
+                    margin-right: 0
+
+
+@media screen and (max-width: 768px)
+    .page_header
+
+        .header_bottom
+
+            &__logo
+                justify-content: center
+
+
 @media screen and (max-width: 1140px)
-    .header_bottom
-        margin-bottom: 40px
+    .page_header
 
-        &__logo
-            justify-content: center
-
-
+        .header_bottom
+            margin-bottom: 40px
 

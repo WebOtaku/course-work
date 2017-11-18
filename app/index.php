@@ -26,7 +26,14 @@
                         <li class="main_nav__link link-purple"><a href="php/feedback_form.php">Обратная связь</a></li>
                         <li class="main_nav__link link-green"><a href="php/about_us.php">О нас</a></li>
                         <li class="main_nav__link link-brown"><a href="#">Перейти к системе</a></li>
-                        <li class="main_nav__link main_nav__link-log_in link-red "><a href="php/authorization_form.php">Войти</a></li>
+                        <?
+                            if (!isset($_COOKIE['id'])) {
+                                echo '<li class="main_nav__link link-red"><a href="php/account/authorization.php">Войти</a></li>';
+                            }
+                            else {
+                                echo '<li class="main_nav__link link-red"><a href="php/account/sign_out.php">Выйти</a></li>';
+                            }
+                        ?>
                     </ul>
                 </nav>
             </div>
@@ -73,8 +80,15 @@
             <nav class="footer_nav">
                 <ul>
                     <li class="footer_nav__link link-purple"><a href="php/feedback_form.php">Обратная связь</a></li>
-                    <li class="footer_nav__link link-red"><a href="php/authorization_form.php">Войти</a></li>
-                    <li class="footer_nav__link link-red"><a href="php/registration_form.php">Зарегистрироваться</a></li>
+                    <?
+                        if (!isset($_COOKIE['id'])) {
+                            echo '<li class="footer_nav__link link-red"><a href="php/account/authorization.php">Войти</a></li>';
+                        }
+                        else {
+                            echo '<li class="footer_nav__link link-red"><a href="index.php">Войти</a></li>';
+                        }
+                    ?>
+                    <li class="footer_nav__link link-red"><a href="php/account/registration.php">Зарегистрироваться</a></li>
                 </ul>
             </nav>
             <div class="footer_copyright">

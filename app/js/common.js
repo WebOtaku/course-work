@@ -6,10 +6,19 @@ $(document).ready(function(){
     $(window).scroll(function() {
         var $scrolled = window.pageYOffset || document.documentElement.scrollTop;
         var $header_top = $('.header_top');
-        if ($scrolled > parseInt($header_top.css('height'))) {
-            $header_top.css('position', 'fixed');
+
+        if ($scrolled > parseInt($('header').css('height'))) {
+            $header_top.css({
+                'position': 'fixed',
+                'margin-bottom' : 0
+            });
+            $('main').css('margin-top', '40px')
         } else {
-            $header_top.css('position', 'static');
+            $header_top.css({
+                'position': 'static',
+                'margin-bottom' : '40px'
+            });
+            $('main').css('margin-top', '0')
         }
     });
 
@@ -37,10 +46,10 @@ $(document).ready(function(){
     });
 
     $(window).resize(function () {
-        if ($main_nav.css('display') == 'none' && parseInt($html.css('width')) >= 751) {
+        if ($main_nav.css('display') == 'none' && parseInt($html.css('width')) >= 416) {
             $('.main_nav').css('display', 'flex');
         }
-        if (parseInt($html.css('width')) <= 751) {
+        if (parseInt($html.css('width')) <= 416) {
             $('.main_nav').css('display', 'none');
         }
     });

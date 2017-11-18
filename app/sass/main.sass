@@ -46,7 +46,8 @@ body
         padding:
             left: 12px
         background-color: #000
-        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4)
+        box-shadow: 0 2px 3px var(--shadowColor)
+        transition: all 0.25s ease
         border-bottom: 5px solid var(--colorMain)
 
         .hamburger
@@ -57,8 +58,6 @@ body
             align-self: center
             min-width: 16px
             order: 1
-            padding: 10px
-            transition: transform 0.1s ease-in-out
 
             &:focus
                 outline: none
@@ -70,10 +69,12 @@ body
                 display: inline-flex
                 flex-flow: row wrap
 
+
             li:nth-of-type(6)
                 margin-right: 2em
 
             &__link
+                transition: all 0.25s ease-in
 
                 a
                     display: block
@@ -107,6 +108,7 @@ body
             li:nth-of-type(7)[title="active"]
                 background-color: var(--colorLogIn)
 
+    // MAIN PAGE
     .promo
         height: 480px
         width: 100%
@@ -133,42 +135,43 @@ body
 
             p
                 margin-top: 20px
-                color: rgba(255, 255, 255, 0.8)
+                color: rgba(255, 255, 255, 0.9)
                 text-align: center
                 max-width: 500px
 
-
-.header_bottom
-    display: flex
-    width: 100%
-    justify-content: center
-    background-color: var(--colorMain)
-    padding:
-        top: 16px
-        left: 16px
-
-    &__logo
+    // OTHER PAGE
+    .header_bottom
         display: flex
-        flex-flow: row wrap
-        align-items: center
-        justify-content: flex-start
+        margin-bottom: 40px
         width: 100%
-        max-width: 1140px
-        padding-right: 16px
+        justify-content: center
+        background-color: var(--colorMain)
+        padding:
+            top: 16px
+            left: 16px
+        transition: all 0.25s ease
 
-        h1
-            color: #ffffff
-            font-size: 32pt
-            padding-bottom: 16px
+        &__logo
+            display: flex
+            flex-flow: row wrap
+            align-items: center
+            justify-content: flex-start
+            width: 100%
+            max-width: 1140px
+            padding-right: 16px
 
-        img
-            margin-right: 0.8em
-            padding-bottom: 16px
-            min-width: 296px
+            h1
+                color: #ffffff
+                font-size: 32pt
+                padding-bottom: 16px
+
+            img
+                margin-right: 0.8em
+                padding-bottom: 16px
+                min-width: 296px
 
 
 //MAIN
-
 .features
     display: flex
     flex-flow: column wrap
@@ -214,6 +217,92 @@ body
             margin-bottom: 100px
 
 
+// Authorization form
+
+.auth
+    display: flex
+    flex-flow: column wrap
+    align-items: center
+    margin-bottom: 40px
+
+
+    &__tip, a
+        text-align: center
+        font-size: 32px
+        color: var(--colorMain)
+        margin-bottom: 32px
+
+        a:hover, a:focus
+            color: var(--colorText)
+
+        a
+            text-decoration: underline
+
+
+    &__form
+        display: flex
+        flex-flow: column wrap
+        padding: 16px
+        border-radius: 8px
+
+        &__group
+            display: flex
+            flex-flow: row wrap
+            justify-content: center
+            padding:
+                bottom:  16px
+                left: 8px
+                right: 8px
+
+            label
+                flex: 1 1 100%
+                max-width: 352px
+                font-size: 24px
+                text-align: left
+                color: var(--colorText)
+                margin-bottom: 4px
+
+            input, select
+                flex: 1 1 100%
+                max-width: 352px
+                padding: 4px
+                font-size: 20px
+                color: var(--colorText)
+                border: 2px solid var(--colorMain)
+
+        button
+            align-self: center
+            margin:
+                top: 16px
+                right: 16px
+                bottom: 16px
+            padding: 12px 32px
+            font-size: 18px
+            color: #fff
+            background-color: var(--colorMain)
+            border: none
+
+            &:hover, &:focus
+                background-color: var(--colorText)
+
+        h1
+            flex: 1 1 100%
+            font-size: 32px
+            color: var(--colorText)
+            margin-bottom: 16px
+
+    .err
+        font-size: 18px
+        text-align: center
+        color: #ff0000
+
+    .msg
+        font-size: 18px
+        text-align: center
+        color: var(--colorText)
+
+
+
 .work_in_progress
     display: flex
     flex-flow: row wrap
@@ -222,6 +311,7 @@ body
     margin-bottom: 100px
 
     span
+        transition: all 0.25s ease
         padding: 16px
         font-size: 32pt
         text-align: center
@@ -241,6 +331,8 @@ body
         top: 24px
     background-color: #000
     border-top: 5px solid var(--colorMain)
+    transition: all 0.5s ease
+    box-shadow: 0 -2px 3px var(--shadowColor)
 
     .footer_nav
         justify-content: space-between
@@ -270,10 +362,15 @@ body
 
     .footer_nav
 
-        .link-purple:hover a
+        &__link
+            transition: all 0.25s ease
+
+        .link-purple:hover a,
+        .link-purple a:focus
             color: var(--colorFeed)
 
-        .link-red:hover a
+        .link-red:hover a,
+        .link-red a:focus
             color: var(--colorLogIn)
 
         li
