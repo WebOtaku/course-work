@@ -103,10 +103,10 @@ $db -> close();
                         <li class="main_nav__link link-brown"><a href="#">Перейти к системе</a></li>
                         <?
                             if (!isset($_COOKIE['id'])) {
-                                echo '<li class="main_nav__link link-red"><a href="authorization.php">Войти</a></li>';
+                                echo '<li class="main_nav__link link-red" title="active"><a href="authorization.php">Войти</a></li>';
                             }
                             else {
-                                echo '<li class="main_nav__link link-red"><a href="sign_out.php">Выйти</a></li>';
+                                echo '<li class="main_nav__link link-red" title="active"><a href="sign_out.php">Выйти</a></li>';
                             }
                         ?>
                     </ul>

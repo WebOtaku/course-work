@@ -129,32 +129,34 @@ gulp.task('build',['clean', 'css', 'js', 'img'], function(){
         '!./app/css/main.min.css',
         './app/css/*.css'
     ])
-        .pipe(gulp.dest('../dist/css/'))
+        .pipe(gulp.dest('dist/css/'))
 
     // fonts
     gulp.src('./app/fonts/**/*')
-        .pipe(gulp.dest('../dist/fonts/'))
+        .pipe(gulp.dest('dist/fonts/'))
 
     // js
     gulp.src([
         '!./app/js/common.min.js',
         './app/js/**/*'
     ])
-        .pipe(gulp.dest('../dist/js/'))
+        .pipe(gulp.dest('dist/js/'))
 
     // html
     gulp.src([
-        './app/**/*.html',
-        './app/.htaccess'
+        './app/**/*.html'
     ])
-        .pipe(gulp.dest('../dist/'))
+        .pipe(gulp.dest('dist/'))
 
     // php
+    gulp.src('./app/php/account/*.php')
+        .pipe(gulp.dest('dist/php/account/'))
+
     gulp.src('./app/php/*.php')
-        .pipe(gulp.dest('../dist/php/'))
+        .pipe(gulp.dest('dist/php/'))
 
     gulp.src('./app/*.php')
-        .pipe(gulp.dest('../dist/'))
+        .pipe(gulp.dest('dist/'))
 });
 
 // Settings BrowserSync

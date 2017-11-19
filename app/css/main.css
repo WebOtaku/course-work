@@ -203,9 +203,6 @@ body {
   background-color: #000;
   -webkit-box-shadow: 0 2px 3px var(--shadowColor);
   box-shadow: 0 2px 3px var(--shadowColor);
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
   border-bottom: 5px solid var(--colorMain);
 }
 
@@ -249,12 +246,6 @@ body {
 
 .page_header .header_top .main_nav li:nth-of-type(6) {
   margin-right: 2em;
-}
-
-.page_header .header_top .main_nav__link {
-  -webkit-transition: all .25s ease-in;
-  -o-transition: all .25s ease-in;
-  transition: all .25s ease-in;
 }
 
 .page_header .header_top .main_nav__link a {
@@ -365,9 +356,6 @@ body {
   background-color: var(--colorMain);
   padding-top: 16px;
   padding-left: 16px;
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
 }
 
 .page_header .header_bottom__logo {
@@ -644,9 +632,6 @@ body {
 }
 
 .work_in_progress span {
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
   padding: 16px;
   font-size: 32pt;
   text-align: center;
@@ -672,9 +657,6 @@ body {
   padding-top: 24px;
   background-color: #000;
   border-top: 5px solid var(--colorMain);
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
   -webkit-box-shadow: 0 -2px 3px var(--shadowColor);
   box-shadow: 0 -2px 3px var(--shadowColor);
 }
@@ -718,12 +700,6 @@ body {
   padding-right: 24px;
 }
 
-.page_footer .footer_nav__link {
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
-}
-
 .page_footer .footer_nav .link-purple a:focus,
 .page_footer .footer_nav .link-purple:hover a {
   color: var(--colorFeed);
@@ -753,13 +729,7 @@ body {
   }
 }
 
-@media screen and (max-width:610px) {
-  .page_header .header_bottom__logo img {
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width:416px) {
+@media screen and (max-width:414px) {
   .page_header .header_top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -797,6 +767,10 @@ body {
   }
 
   .page_header .header_top .main_nav ul li:nth-of-type(6) {
+    margin-right: 0;
+  }
+
+  .page_header .header_bottom__logo img {
     margin-right: 0;
   }
 }

@@ -46,10 +46,10 @@ $(document).ready(function(){
     });
 
     $(window).resize(function () {
-        if ($main_nav.css('display') == 'none' && parseInt($html.css('width')) >= 416) {
+        if ($main_nav.css('display') == 'none' && parseInt($html.css('width')) >= 414) {
             $('.main_nav').css('display', 'flex');
         }
-        if (parseInt($html.css('width')) <= 416) {
+        if (parseInt($html.css('width')) <= 414) {
             $('.main_nav').css('display', 'none');
         }
     });
