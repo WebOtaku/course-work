@@ -1,4 +1,3 @@
-// Plug in
 var gulp            = require('gulp'),
     sass            = require('gulp-sass'),
     uglify          = require('gulp-uglify'),
@@ -15,10 +14,12 @@ var gulp            = require('gulp'),
     autoprefixer    = require('gulp-autoprefixer'),
 	notify          = require('gulp-notify'),
 	smartgrid       = require('smart-grid');
-    
-// Tasks
 
-// Smartgrid
+
+/* *
+ * SMART GRID
+ * */
+
 gulp.task('smartgrid', function() {
 	const settings = {
 	outputStyle: 'sass', /* less || scss || sass || styl */
@@ -50,7 +51,11 @@ gulp.task('smartgrid', function() {
 	smartgrid('./app/sass/_mixins', settings)
 });
 
-// Compile SASS in CSS 
+
+/* *
+ * SASS TO CSS, MINIFY CSS, CONCAT CSS
+ * */
+
 gulp.task('sass', function() {
     return gulp.src('./app/sass/main.sass')
         .pipe(sass().on('error', notify.onError()))
@@ -76,7 +81,11 @@ gulp.task('css',['sass'], function(){
     .pipe(browsersync.reload({stream: true}))
 });
 
-// Minify JS
+
+/* *
+ * UGLIFY JS, CONCAT JS
+ * */
+
 gulp.task('common-js', function() {
 	return gulp.src([
         '!./app/js/**/*.min.js',
@@ -87,7 +96,6 @@ gulp.task('common-js', function() {
 	.pipe(gulp.dest('app/js'));
 });
 
-// Concat JS
 gulp.task('js',['common-js'], function(){
     return gulp.src([
         './app/libs/jquery/jquery.min.js',
@@ -100,7 +108,11 @@ gulp.task('js',['common-js'], function(){
     .pipe(browsersync.reload({stream: true}));
 });
 
-// Cache Images
+
+/* *
+ * CACHE AND MINIFY IMAGES
+ * */
+
 gulp.task('img', function(){
     return gulp.src('./app/img/**/*')
     .pipe(cache(imagemin({
@@ -112,88 +124,78 @@ gulp.task('img', function(){
     .pipe(gulp.dest('./dist/img/'))
 });
 
-// Gulp watch
-gulp.task('watch', [/*'browsersync',*/'css', 'js'], function(){
-    gulp.watch('./app/sass/**/*.sass',['css'])
-    gulp.watch('./app/js/**/*.js', ['js'])
-    gulp.watch('./app/**/*.html', browsersync.reload)
-    // gulp.watch('./app/php/**/*.php', browsersync.reload({stream: true}))
+/* *
+ * WATCHER
+ * */
 
+gulp.task('watch', ['css', 'js'], function(){
+    gulp.watch('./app/sass/**/*.sass',['css']);
+    gulp.watch('./app/js/**/*.js', ['js']);
+    gulp.watch('./app/**/*.html', browsersync.reload)
 });
 
 
-// Build project
+/* *
+ * BUILD PROJECT
+ * */
+
 gulp.task('build',['clean', 'css', 'js', 'img'], function(){
-    // css
+    // CSS
     gulp.src([
         '!./app/css/main.min.css',
         './app/css/*.css'
     ])
-        .pipe(gulp.dest('dist/css/'))
+        .pipe(gulp.dest('dist/css/'));
 
-    // fonts
+    // FONTS
     gulp.src('./app/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts/'))
+        .pipe(gulp.dest('dist/fonts/'));
 
-    // js
+    // JS
     gulp.src([
         '!./app/js/common.min.js',
         './app/js/**/*'
     ])
-        .pipe(gulp.dest('dist/js/'))
+        .pipe(gulp.dest('dist/js/'));
 
     // html
     gulp.src([
         './app/**/*.html'
     ])
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('dist/'));
 
-    // php
+    // PHP
     gulp.src('./app/php/account/*.php')
-        .pipe(gulp.dest('dist/php/account/'))
+        .pipe(gulp.dest('dist/php/account/'));
 
     gulp.src('./app/php/*.php')
-        .pipe(gulp.dest('dist/php/'))
+        .pipe(gulp.dest('dist/php/'));
 
     gulp.src('./app/*.php')
         .pipe(gulp.dest('dist/'))
 });
 
-// Settings BrowserSync
-gulp.task('browsersync', function(){
-    browsersync({
-        server: {
-            baseDir: 'app'
-        },
-        notify: false
-    })
-});
 
-// Del dist
+/* *
+ * DELETE DIST
+ * */
+
 gulp.task('clean', function(){
     return del.sync('dist')
 });
 
-// Clear cache
+
+/* *
+ * CLEAN CACHE
+ * */
+
 gulp.task('clear', function(){
     return cache.clearAll()
 });
 
-// default
-gulp.task('default', ['watch']);
 
-// Catch Error
-/*function wrapPipe(taskFn) {
-  return function(done) {
-    var onSuccess = function() {
-      done();
-    };
-    var onError = function(err) {
-      done(err);
-    }
-    var outStream = taskFn(onSuccess, onError);
-    if(outStream && typeof outStream.on === 'function') {
-      outStream.on('end', onSuccess);
-    }
-  }
-}*/
+/* *
+ * DEFAULT TASK
+ * */
+
+gulp.task('default', ['watch']);

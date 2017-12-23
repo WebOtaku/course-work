@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once("config.inc.php");
+    require_once("../config.inc.php");
 
 
     if (isset($_POST['submit'])){
@@ -98,8 +98,8 @@ $db -> close();
                         <li class="main_nav__link link-blue"><a href="../../index.php"><img src="../../img/home.png" alt="Главная"></a></li>
                         <li class="main_nav__link link-orange"><a href="../possibilities.php">Возможности</a></li>
                         <li class="main_nav__link link-yellow"><a href="../documentation.php">Документация</a></li>
-                        <li class="main_nav__link link-purple"><a href="../feedback_form.php">Обратная связь</a></li>
-                        <li class="main_nav__link link-green"><a href="../about_us.php">О нас</a></li>
+                        <li class="main_nav__link link-purple"><a href="../feedback.php">Обратная связь</a></li>
+                        <li class="main_nav__link link-green"><a href="../about.php">О нас</a></li>
                         <li class="main_nav__link link-brown"><a href="#">Перейти к системе</a></li>
                         <?
                             if (!isset($_COOKIE['id'])) {
@@ -121,8 +121,8 @@ $db -> close();
         </header>
 
         <main>
-            <div class="auth">
-                <p class="auth__tip">
+            <div class="reg">
+                <p class="reg__tip">
                     Уже есть учётная запись ?
                     <?
                         if (!isset($_COOKIE['id'])) {
@@ -142,35 +142,35 @@ $db -> close();
                         unset($_SESSION['message']);
                     }
                 ?>
-                <form class="auth__form" action="registration.php" method="post">
-                    <div class="auth__form__group">
+                <form class="form" action="registration.php" method="post">
+                    <div class="form__group">
                         <label for="name">Имя:</label>
-                        <input type="text" name="name" id="name" min="2" max="32" required>
+                        <input type="text" name="name" id="name" min="2" max="32" autofocus required>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="last_name">Фамилия:</label>
                         <input type="text" name="last_name" id="last_name" min="2" max="32" required>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="status">Статус:</label>
                         <select name="status" id="status">
                             <option value="1">Студент/ученик</option>
                             <option value="2">Преподаватель/учитель</option>
                         </select>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="login">Логин:</label>
                         <input type="text" name="login" id="login" min="6" max="32" required>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="email">Почта:</label>
                         <input type="email" name="email" id="email" min="6" max="32" required>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="password">Пароль:</label>
                         <input type="password" name="password" id="password" min="6" max="32" required>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="password_repeat">Повторите пароль:</label>
                         <input type="password" name="password_repeat" id="password_repeat" min="6" max="32" required>
                     </div>
@@ -182,7 +182,7 @@ $db -> close();
         <footer class="page_footer">
             <nav class="footer_nav">
                 <ul>
-                    <li class="footer_nav__link link-purple"><a href="../feedback_form.php">Обратная связь</a></li>
+                    <li class="footer_nav__link link-purple"><a href="../feedback.php">Обратная связь</a></li>
                     <?
                         if (!isset($_COOKIE['id'])) {
                             echo '<li class="footer_nav__link link-red"><a href="authorization.php">Войти</a></li>';

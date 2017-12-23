@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once("config.inc.php");
+    require_once("../config.inc.php");
 
     if (isset($_POST['submit'])) {
 
@@ -37,7 +37,7 @@
             $user = $result->fetch_array(MYSQLI_ASSOC);
 
             if (empty($user['id'])) {
-                $_SESSION['error'] = '<span class="err">Извините, введённый вами логин или пароль неверный.</span>';
+                $_SESSION['error'] = '<span class="err">Извините, введённый вами email или пароль неверный.</span>';
             }
             else {
                 setcookie('id', $user['id'], time() + 86400, '/app', 'localhost');
@@ -75,8 +75,8 @@ $db -> close();
                         <li class="main_nav__link link-blue"><a href="../../index.php"><img src="../../img/home.png" alt="Главная"></a></li>
                         <li class="main_nav__link link-orange"><a href="../possibilities.php">Возможности</a></li>
                         <li class="main_nav__link link-yellow"><a href="../documentation.php">Документация</a></li>
-                        <li class="main_nav__link link-purple"><a href="../feedback_form.php">Обратная связь</a></li>
-                        <li class="main_nav__link link-green"><a href="../about_us.php">О нас</a></li>
+                        <li class="main_nav__link link-purple"><a href="../feedback.php">Обратная связь</a></li>
+                        <li class="main_nav__link link-green"><a href="../about.php">О нас</a></li>
                         <li class="main_nav__link link-brown"><a href="#">Перейти к системе</a></li>
                         <?
                             if (!isset($_COOKIE['id'])) {
@@ -112,12 +112,12 @@ $db -> close();
                         unset($_SESSION['message']);
                     }
                 ?>
-                <form class="auth__form" action="authorization.php" method="post">
-                    <div class="auth__form__group">
+                <form class="form" action="authorization.php" method="post">
+                    <div class="form__group">
                         <label for="email">Почта:</label>
-                        <input type="email" name="email" id="email" min="6" max="32" required>
+                        <input type="email" name="email" id="email" min="6" max="32" autofocus required>
                     </div>
-                    <div class="auth__form__group">
+                    <div class="form__group">
                         <label for="password">Пароль:</label>
                         <input type="password" name="password" id="password" min="6" max="32" required>
                     </div>
@@ -129,7 +129,7 @@ $db -> close();
         <footer class="page_footer">
             <nav class="footer_nav">
                 <ul>
-                    <li class="footer_nav__link link-purple"><a href="../feedback_form.php">Обратная связь</a></li>
+                    <li class="footer_nav__link link-purple"><a href="../feedback.php">Обратная связь</a></li>
                     <?
                         if (!isset($_COOKIE['id'])) {
                             echo '<li class="footer_nav__link link-red"><a href="authorization.php">Войти</a></li>';

@@ -23,8 +23,8 @@
                         <li class="main_nav__link link-blue"><a href="../index.php"><img src="../img/home.png" alt="Главная"></a></li>
                         <li class="main_nav__link link-orange"><a href="../php/possibilities.php">Возможности</a></li>
                         <li class="main_nav__link link-yellow" title="active"><a href="../php/documentation.php">Документация</a></li>
-                        <li class="main_nav__link link-purple"><a href="../php/feedback_form.php">Обратная связь</a></li>
-                        <li class="main_nav__link link-green"><a href="../php/about_us.php">О нас</a></li>
+                        <li class="main_nav__link link-purple"><a href="feedback.php">Обратная связь</a></li>
+                        <li class="main_nav__link link-green"><a href="about.php">О нас</a></li>
                         <li class="main_nav__link link-brown"><a href="#">Перейти к системе</a></li>
                         <?
                             if (!isset($_COOKIE['id'])) {
@@ -55,7 +55,7 @@
         <footer class="page_footer">
             <nav class="footer_nav">
                 <ul>
-                    <li class="footer_nav__link link-purple"><a href="../php/feedback_form.php">Обратная связь</a></li>
+                    <li class="footer_nav__link link-purple"><a href="feedback.php">Обратная связь</a></li>
                     <?
                         if (!isset($_COOKIE['id'])) {
                             echo '<li class="footer_nav__link link-red"><a href="account/authorization.php">Войти</a></li>';
