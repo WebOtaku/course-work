@@ -1,2 +1,1 @@
-# diploma
-Diploma project
+# Course Work
